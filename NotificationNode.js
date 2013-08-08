@@ -1,10 +1,12 @@
-define([ "dojo/text", "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin", "dojo/dom-construct", "dGrowl/NotificationNode", "dojo/dom-class", "dojo/_base/event", "dojo/_base/lang"],
-	   function(t, declare, base, templated, domCon, NotificationNode, domClass, event, lang)
+define([ "dojo/text", "dojo/_base/declare", "dijit/_WidgetBase", "dijit/_TemplatedMixin",
+		"dojo/dom-construct", "dojo/dom-class", "dojo/_base/event", "dojo/_base/lang",
+		"dojo/text!./templates/NotificationNode.html"],
+	   function(t, declare, base, templated, domCon, domClass, event, lang, template)
 {
-	return declare('dGrowl',
+	return declare('NotificationNode',
 	[base, templated],
 	{
-		'templateString':dojo.cache('dGrowl', 'NotificationNode.html'),
+		'templateString':template,
 		'title':'',
 		'message':'',
 		'duration':5000,
